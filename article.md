@@ -39,48 +39,23 @@ Let's walk through a practical example of converting a PDF file to a Word docume
 1. **Create a New Page**: In your Bubble application, create a new page where users can upload their PDF files.
 2. **Add an Upload Element**: Drag and drop a file upload element onto the page. This will allow users to upload their PDF files.
 3. **Add a Button**: Add a button that users can click to initiate the conversion process.
-4. **Create a Workflow**: Set up a workflow for the button click event. In the workflow editor:
+4. **Add a Link**: Add a link that users can click to download converted file.
+   - **Add custom state**: Press 🛈 in the dialog title -> Add new custom state
+      - **State name**: converted_file_url
+      - **State type**: text
+   - **Link destination**: External URL
+   - **Destination URL**: Insert dynamic data -> Link -> converted_file_url
+
+5. **Create a Workflow**: Set up a workflow for the button click event. In the workflow editor:
    - **Add an event**: Elements -> An element is clicked (make sure that button element is selected)
    - **Add an Action**: Data (Things) -> ConvertAPI convert file
      - **File**: Inset dynamic data -> File uploader -> value
-     - **Source file format**: docx
-     - **Destination file format**: pdf
+     - **Source file format**: Arbitrary text -> docx
+     - **Destination file format**: Arbitrary text -> pdf
+   - **Add an Action**: Set state of an element -> Element: Link
 
-5. **Display or Download the Converted File**: After the conversion is complete, you can either display the converted file to the user or provide a download link.
+6. **Display or Download the Converted File**: After the conversion is complete, you can either display the converted file to the user or provide a download link.
    Add another action in the workflow to handle this, such as saving the converted file URL to a database and displaying it in a repeating group.
-
-### Example Workflow Configuration
-
-Here’s a step-by-step breakdown of setting up the conversion workflow:
-
-1. **File Upload**:
-   - Element: `FileUploader`
-   - Field: `FileUploader's value`
-
-2. **Button Click Event**:
-   - Element: `ConvertButton`
-   - Workflow: When `ConvertButton` is clicked.
-
-3. **Conversion Action**:
-   - Action: `ConvertAPI - Convert File`
-   - Parameters:
-     - Source File: `FileUploader's value`
-     - Conversion Type: `PDF to Word`
-     - Output Format: `docx`
-
-4. **Handling Output**:
-   - Action: Save the output URL to a database field.
-   - Display the URL or file link in a repeating group or text element.
-
-### Example Use Case: Automated Report Generation
-
-Suppose you have an application where users need to generate reports in PDF format from a set of data inputs.
-With the ConvertAPI plugin, you can automate the conversion of these reports into Word documents for further editing.
-
-1. **User Input**: Users input data into a form.
-2. **Generate PDF**: Use Bubble's built-in capabilities or another plugin to generate a PDF report.
-3. **Convert PDF to Word**: Use the ConvertAPI plugin to convert the PDF report to a Word document.
-4. **Provide Download Link**: Allow users to download the Word document for further customization.
 
 ### Final Thoughts
 
