@@ -40,11 +40,11 @@ Let's walk through a practical example of converting a PDF file to a Word docume
 2. **Add an Upload Element**: Drag and drop a file upload element onto the page. This will allow users to upload their PDF files.
 3. **Add a Button**: Add a button that users can click to initiate the conversion process.
 4. **Create a Workflow**: Set up a workflow for the button click event. In the workflow editor:
-   - **Action Step 1**: Use the "ConvertAPI - Convert File" action.
-   - **Configure Action**:
-     - **Source File**: Set this to the file uploaded by the user.
-     - **Conversion Type**: Select "PDF to Word."
-     - **Output Format**: Choose "docx."
+   - **Add an event**: Elements -> An element is clicked (make sure that button element is selected)
+   - **Add an Action**: Data (Things) -> ConvertAPI convert file
+     - **File**: Inset dynamic data -> File uploader -> value
+     - **Source file format**: docx
+     - **Destination file format**: pdf
 
 5. **Display or Download the Converted File**: After the conversion is complete, you can either display the converted file to the user or provide a download link.
    Add another action in the workflow to handle this, such as saving the converted file URL to a database and displaying it in a repeating group.
