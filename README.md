@@ -1,5 +1,5 @@
 # ConvertAPI Bubble.io plugin
-Convert Word, Excel, PowerPoint, HTML, PDF and Image formats with our powerful file conversion service. We support more than 200 file types: https://www.convertapi.com/doc/file-formats
+Convert Word, Excel, PowerPoint, HTML, PDF and Image formats with our powerful file conversion service. We support more than 200 file types: https://www.convertapi.com/api
 
 Plugin page: https://bubble.io/plugin/convertapi-1690977977458x650984287975768000
 
