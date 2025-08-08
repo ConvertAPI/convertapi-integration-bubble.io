@@ -7,6 +7,6 @@ Demo: https://support-31650.bubbleapps.io/version-test
 
 ## Instructions
 1. Sign up https://www.convertapi.com/a/signup
-2. Install ConvertAPI plugin
-3. Add your secret to the plugin configuration. Your secret can be found at https://www.convertapi.com/a/auth
+2. Install the ConvertAPI plugin
+3. Add your API Token to the plugin configuration. Your secret can be found at https://www.convertapi.com/a/authentication
 4. Add a step to your workflow "Data (Things) ->  ConvertAPI convert file"
